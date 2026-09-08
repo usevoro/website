@@ -1,0 +1,16 @@
+name: Website improvement
+description: Suggest a focused improvement to content, accessibility, or behavior.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Include relevant examples or alternatives. Avoid private user data.
+    validations:
+      required: true

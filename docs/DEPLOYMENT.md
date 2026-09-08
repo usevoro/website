@@ -11,7 +11,7 @@ Vercel preview/development environments remain noindex even if the indexing flag
 
 Keep Vercel’s system environment variables enabled. Without `SITE_ORIGIN`, noindex previews use `VERCEL_PROJECT_PRODUCTION_URL`, then `VERCEL_URL`. Local builds fall back to `https://localhost`. Indexable production builds require an explicit production origin to prevent accidental canonical URLs on ephemeral deployments.
 
-The build emits HTML, CSS, JavaScript, local images/fonts, a sitemap, robots.txt, and a custom 404 page. It has no request-time server, analytics, uploads, or application accounts. Unknown paths must remain 404s; do not add a catch-all rewrite to the home page.
+The build emits HTML, CSS, JavaScript, local images/fonts, a sitemap, robots.txt, and a custom 404 page. It has no request-time server, uploads, or application accounts. Optional Umami Cloud analytics is disabled by default; see [analytics setup](ANALYTICS.md) to enable it later using Production environment variables. Unknown paths must remain 404s; do not add a catch-all rewrite to the home page.
 
 ## Release freshness
 

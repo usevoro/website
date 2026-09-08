@@ -1,3 +1,5 @@
+import { resolveAnalytics } from './analytics.mjs';
+
 export function resolveConfig(input, env = process.env) {
   const config = structuredClone(input);
   const vercelOrigin = env.VERCEL_PROJECT_PRODUCTION_URL || env.VERCEL_URL;
@@ -20,5 +22,6 @@ export function resolveConfig(input, env = process.env) {
   config.indexable = requested && (!env.VERCEL_ENV || env.VERCEL_ENV === 'production');
   if (config.indexable && ((!env.SITE_ORIGIN && !input.origin) || origin.hostname === 'localhost'))
     throw new Error('Public indexing requires an explicit production SITE_ORIGIN.');
+  config.analytics = resolveAnalytics({ ...config, explicitOrigin: Boolean(input.origin) }, env);
   return config;
 }

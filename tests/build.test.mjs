@@ -21,6 +21,8 @@ test('standalone production and preview builds emit correct SEO and complete loc
           SITE_ORIGIN: 'https://voro.example',
           SITE_INDEXABLE: 'true',
           VERCEL_ENV: environment,
+          UMAMI_ENABLED: 'true',
+          UMAMI_WEBSITE_ID: '11111111-1111-4111-8111-111111111111',
         },
       });
       assert.equal(built.status, 0, built.stderr);
@@ -41,9 +43,12 @@ test('standalone production and preview builds emit correct SEO and complete loc
         environment === 'production',
       );
       assert.match(await readFile(path.join(root, 'dist/404.html'), 'utf8'), /Page not found/);
+      const privacy = await readFile(path.join(root, 'dist/privacy.html'), 'utf8');
+      assert.equal(privacy.includes('This website uses Umami Cloud'), environment === 'production');
+      assert.equal(html.includes('https://cloud.umami.is/script.js'), environment === 'production');
       for (const match of html.matchAll(/(?:href|src)="(\/(?!\/)[^"#]+)"/g))
         await readFile(path.join(root, 'dist', match[1]));
-      assert.ok(html.includes('href="https://github.com/usevoro/website">Website source</a>'));
+      assert.match(html, /href="https:\/\/github.com\/usevoro\/website"[^>]*>Website source<\/a>/);
     }
   } finally {
     await rm(root, { recursive: true, force: true });

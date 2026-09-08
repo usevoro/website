@@ -1,0 +1,4 @@
+dist/
+coverage/
+public/brand/fonts/*LICENSE.txt
+public/brand/*.svg

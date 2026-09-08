@@ -1,0 +1,30 @@
+{
+  "name": "@usevoro/website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "refresh": "node scripts/refresh.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "version": "0.1.0",
+  "description": "The VORO product website \u2014 a local 3D asset review workspace for people making games.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usevoro/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/usevoro/website/issues"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6"
+  }
+}

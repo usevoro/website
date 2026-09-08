@@ -2,7 +2,7 @@ import { readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { visibleReleaseData, repositoryName } from './releases.mjs';
-import { renderPage } from './render.mjs';
+import { renderPage, renderPrivacyPage } from './render.mjs';
 import { resolveConfig } from './config.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const config = resolveConfig(JSON.parse(await readFile(path.join(root, 'data/site.json'))));
@@ -23,6 +23,7 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 await cp(path.join(root, 'public'), dist, { recursive: true });
 await writeFile(path.join(dist, 'index.html'), renderPage(config, releases));
+await writeFile(path.join(dist, 'privacy.html'), renderPrivacyPage(config));
 await writeFile(
   path.join(dist, 'robots.txt'),
   config.indexable

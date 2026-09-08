@@ -191,6 +191,7 @@ test('every shipped local image, font, script and example file exists', async ()
   const html = renderPage(config, visibleReleaseData(baseline, null, now));
   const paths = [...html.matchAll(/(?:src|href)="(\/(?!\/)[^"#]*)"/g)]
     .map((m) => m[1])
-    .filter((p) => p !== '/');
+    // Generated HTML pages are verified in the standalone build test.
+    .filter((p) => p !== '/' && p !== '/privacy.html');
   for (const asset of new Set(paths)) await readFile(new URL('../public' + asset, import.meta.url));
 });

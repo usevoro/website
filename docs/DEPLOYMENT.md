@@ -15,7 +15,7 @@ The build emits HTML, CSS, JavaScript, local images/fonts, a sitemap, robots.txt
 
 ## Release freshness
 
-See [RELEASES.md](RELEASES.md) before enabling desktop downloads or stars. CI does not publish binaries. Public release checks run anonymously at deployment time. An hourly refresh/build/deploy must be arranged before enabling cached download/star data; a deployed static page retains its build-time snapshot. No scheduled deployment is configured by this repository.
+See [RELEASES.md](RELEASES.md) before enabling desktop downloads or stars. GitHub Actions is disabled; release publishing and local validation are manual. Public release checks run anonymously at deployment time. Run refresh/check before every manual deployment and redeploy immediately when a release is withdrawn. A deployed static page retains its build-time download/star snapshot; no scheduled deployment is configured.
 
 ## SEO verification before launch
 

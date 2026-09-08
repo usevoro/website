@@ -1,6 +1,5 @@
 # VORO website
 
-[![CI](https://github.com/usevoro/website/actions/workflows/ci.yml/badge.svg)](https://github.com/usevoro/website/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-755087.svg)](LICENSE)
 
 **Small details. Bigger worlds.**
@@ -9,7 +8,7 @@ The product website for **VORO**, a local 3D asset review workspace for people m
 
 ![VORO’s sprout mascot and painted miniature world](public/images/social.jpg)
 
-This repository contains the **website**, not the desktop application. Public desktop downloads are not available yet. The website shows that honestly and activates platform links only when approved releases exist.
+This repository contains the **website**, not the desktop application. Desktop early-access archives are being prepared in [usevoro/voro](https://github.com/usevoro/voro). Public downloads remain unavailable while publisher signing is set up. The website will map exact published assets and show each build’s signing and testing limitations.
 
 ## Run locally
 
@@ -29,6 +28,8 @@ npm run check   # Formatting, tests, and production build
 npm run format  # Format source and documentation
 npm run build   # Generate dist/
 ```
+
+GitHub Actions is disabled, and main has no required CI checks. Run validation locally before opening a PR.
 
 The only development dependency is the pinned formatter. Building and serving the page itself use Node’s standard library.
 

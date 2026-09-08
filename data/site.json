@@ -2,7 +2,7 @@
   "origin": null,
   "indexable": false,
   "organizationUrl": "https://github.com/usevoro",
-  "publicRepository": null,
-  "docsUrl": null,
-  "issuesUrl": null
+  "publicRepository": "usevoro/voro",
+  "docsUrl": "https://github.com/usevoro/voro/blob/main/docs/DOWNLOADS.md",
+  "issuesUrl": "https://github.com/usevoro/voro/issues"
 }

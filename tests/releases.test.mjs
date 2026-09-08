@@ -14,6 +14,12 @@ const config = resolveConfig(
   JSON.parse(await readFile(new URL('../data/site.json', import.meta.url))),
   {},
 );
+baseline.repository = null;
+baseline.stars = null;
+for (const target of baseline.targets) target.status = 'unavailable';
+config.publicRepository = null;
+config.docsUrl = null;
+config.issuesUrl = null;
 const now = Date.parse('2026-09-08T22:00:00Z');
 function available() {
   const m = structuredClone(baseline);

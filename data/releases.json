@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-08T21:27:22.000Z",
-  "repository": null,
+  "generatedAt": "2026-09-08T22:38:02.706Z",
+  "repository": "usevoro/voro",
   "targets": [
     {
       "id": "mac-arm64",
@@ -28,5 +28,9 @@
       "status": "planned"
     }
   ],
-  "stars": null
+  "stars": {
+    "count": 1,
+    "repository": "usevoro/voro",
+    "fetchedAt": "2026-09-08T22:38:02.706Z"
+  }
 }

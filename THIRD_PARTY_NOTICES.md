@@ -9,7 +9,7 @@ The root MIT license applies to the website’s original source and VORO-provide
 
 The fonts are self-hosted WOFF2 files. Preserve their copyright notices, reserved-font-name terms, and licenses when redistributing them.
 
-Prettier is a development-only dependency under MIT; npm distributes its license with the package. It is not included in the generated website. GitHub Actions used by CI are external build tooling, pinned to commit SHAs and maintained through Dependabot.
+Prettier is a development-only dependency under MIT; npm distributes its license with the package. It is not included in the generated website. GitHub Actions and scheduled dependency updates are disabled; development checks run locally.
 
 VORO’s sprout is original vector geometry. The gouache world was generated using OpenAI image generation; its exact prompt is recorded in [image provenance](public/images/provenance.json). Application screenshots use synthetic models and illustrative reviews. See [asset notes](docs/ASSETS.md).
 

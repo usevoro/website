@@ -24,7 +24,7 @@ Do not invent download availability, supported platforms, customers, ratings, pr
 
 ## Pull requests
 
-Explain the problem, resulting behavior, and relevant checks. Link the issue if there is one. Update documentation when configuration or workflow changes. CI must pass; maintainers may request changes or decline work that expands the product’s scope.
+Explain the problem, resulting behavior, and relevant checks. Link the issue if there is one. Update documentation when configuration or workflow changes. Local checks must pass; maintainers may request changes or decline work that expands the product’s scope.
 
 Never commit tokens, `.env` files, customer assets, personal paths, or generated build output. Report vulnerabilities through [SECURITY.md](SECURITY.md), not a public issue. Contributions are provided under this repository’s MIT license; retain third-party notices and identify assets you did not create.
 

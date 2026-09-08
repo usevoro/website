@@ -4,7 +4,7 @@
 
 **Small details. Bigger worlds.**
 
-The product website for **VORO**, a local 3D asset review workspace for people making games. Built with static HTML, CSS, and a small JavaScript enhancement layer. Zero runtime dependencies.
+The product website for **VORO**, a local 3D asset review workspace for people making games. Built with static HTML, CSS, and a small JavaScript enhancement layer. No runtime npm dependencies; optional Umami analytics loads its hosted tracker only when configured for production.
 
 ![VORO’s sprout mascot and painted miniature world](public/images/social.jpg)
 
@@ -40,12 +40,13 @@ The only development dependency is the pinned formatter. Building and serving th
 - Search and social metadata, canonical URLs, structured data, sitemap, and preview noindex controls.
 - Explicit macOS, Windows, and Linux availability, with validated public release mapping and bounded build-time GitHub caches.
 - A downloadable review-sidecar example, GitHub organization links, and a separate website-source link.
+- Optional production-only Umami analytics for download/link clicks and scroll depth, with preview exclusion and a website privacy notice.
 
 ## Deploy
 
 Import **`usevoro/website`** into Vercel. Keep **Root Directory at the repository root (`.`)** and choose **Framework Preset: Other**. The checked-in `vercel.json` sets the install, validation/build command, output directory, and response headers. Nitro is not required.
 
-See [deployment instructions](docs/DEPLOYMENT.md) for environment variables, preview protection, and public indexing. The repo is ready to deploy; no production domain or live deployment is claimed here.
+See [deployment instructions](docs/DEPLOYMENT.md) for environment variables, preview protection, and public indexing. The repo is ready to deploy; no production domain or live deployment is claimed here. [Umami setup](docs/ANALYTICS.md) documents the account, website ID, and Production variables needed later; tracking remains off until explicitly enabled.
 
 ## Project map
 

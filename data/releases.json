@@ -1,19 +1,43 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-08T22:38:02.706Z",
+  "generatedAt": "2026-09-09T08:43:21.217Z",
   "repository": "usevoro/voro",
   "targets": [
     {
       "id": "mac-arm64",
       "platform": "macOS",
       "architecture": "Apple silicon",
-      "status": "unavailable"
+      "status": "available",
+      "version": "0.1.0-alpha.1",
+      "tag": "v0.1.0-alpha.1",
+      "assetName": "VORO-0.1.0-alpha.1-mac-arm64.zip",
+      "channel": "prerelease",
+      "minimumOS": "macOS 13 or newer",
+      "fileType": "ZIP",
+      "sizeBytes": 132787239,
+      "url": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/VORO-0.1.0-alpha.1-mac-arm64.zip",
+      "releaseNotesUrl": "https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1",
+      "checksumUrl": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/SHA256SUMS.txt",
+      "signing": "Developer ID signed and Apple notarized. Packaged-app workflow tests passed.",
+      "verifiedAt": "2026-09-09T08:43:21.217Z"
     },
     {
       "id": "mac-x64",
       "platform": "macOS",
       "architecture": "Intel",
-      "status": "planned"
+      "status": "available",
+      "version": "0.1.0-alpha.1",
+      "tag": "v0.1.0-alpha.1",
+      "assetName": "VORO-0.1.0-alpha.1-mac-x64.zip",
+      "channel": "prerelease",
+      "minimumOS": "macOS 13 or newer",
+      "fileType": "ZIP",
+      "sizeBytes": 138251666,
+      "url": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/VORO-0.1.0-alpha.1-mac-x64.zip",
+      "releaseNotesUrl": "https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1",
+      "checksumUrl": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/SHA256SUMS.txt",
+      "signing": "Developer ID signed and Apple notarized. Experimental cross-build; native Intel testing pending.",
+      "verifiedAt": "2026-09-09T08:43:21.217Z"
     },
     {
       "id": "windows-x64",
@@ -31,6 +55,6 @@
   "stars": {
     "count": 1,
     "repository": "usevoro/voro",
-    "fetchedAt": "2026-09-08T22:38:02.706Z"
+    "fetchedAt": "2026-09-09T08:43:21.217Z"
   }
 }

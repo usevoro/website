@@ -4,7 +4,7 @@
 
 The site defaults to `noindex`. `data/site.json` contains an optional canonical HTTPS origin and `indexable` flag. Set `SITE_ORIGIN` and `SITE_INDEXABLE=true` in the public production environment to enable indexing and the sitemap. Vercel preview/development environments remain noindex even when the flag is enabled. Noindex is an indexing directive, not access control; use Vercel Deployment Protection for restricted previews.
 
-The desktop repository [usevoro/voro](https://github.com/usevoro/voro) is public under MIT. Download data will point to exact early-access archives in that repository once publisher signing and publication are complete. No release assets are public yet. Each card shows the release channel, requirements, signing status, and platform testing limitations. A successful cross-build does not establish native runtime compatibility.
+The desktop repository [usevoro/voro](https://github.com/usevoro/voro) is public under MIT. The manifest maps the published `v0.1.0-alpha.1` Mac early-access archives, both Developer ID signed and Apple notarized. Apple silicon passed the packaged-app workflow checks; native Intel runtime testing is pending. Windows and Linux downloads remain unavailable. Each card shows the release channel, requirements, signing status, and platform testing limitations. A successful cross-build does not establish native runtime compatibility.
 
 To activate real downloads:
 

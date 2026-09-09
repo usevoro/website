@@ -16,7 +16,13 @@ const config = resolveConfig(
 );
 baseline.repository = null;
 baseline.stars = null;
-for (const target of baseline.targets) target.status = 'unavailable';
+// Keep fixture identities, not live release metadata such as checksum URLs.
+baseline.targets = baseline.targets.map(({ id, platform, architecture }) => ({
+  id,
+  platform,
+  architecture,
+  status: 'unavailable',
+}));
 config.publicRepository = null;
 config.docsUrl = null;
 config.issuesUrl = null;
@@ -36,6 +42,7 @@ function available() {
     sizeBytes: 100000,
     url: 'https://github.com/usevoro/releases/releases/download/v0.1.0/VORO-arm64.zip',
     releaseNotesUrl: 'https://github.com/usevoro/releases/releases/tag/v0.1.0',
+    checksumUrl: 'https://github.com/usevoro/releases/releases/download/v0.1.0/SHA256SUMS.txt',
     verifiedAt: new Date(now).toISOString(),
   });
   m.stars = { repository: m.repository, count: 0, fetchedAt: new Date(now).toISOString() };
@@ -61,6 +68,10 @@ test('verified explicit public assets render usable direct links and real zero s
   assert.match(html, /0 stars/);
   assert.match(html, /Early access/);
   assert.match(html, /Unsigned early-access build/);
+  assert.match(
+    html,
+    /href="https:\/\/github.com\/usevoro\/releases\/releases\/download\/v0.1.0\/SHA256SUMS.txt"/,
+  );
 });
 test('expired, future-dated, or unapproved verification never creates downloads', () => {
   const m = available();
@@ -90,6 +101,10 @@ test('validator rejects missing targets, duplicates, malicious URLs, and incompl
     (m) => {
       m.targets[0].sizeBytes = 0;
     },
+    (m) => {
+      m.targets[0].checksumUrl =
+        'https://github.com/another/repo/releases/download/v1/SHA256SUMS.txt';
+    },
   ];
   for (const edit of edits) {
     const m = available();
@@ -118,6 +133,12 @@ test('anonymous refresh uses exact asset mapping, updates real size, and handles
                   state: 'uploaded',
                   size: 12345,
                   browser_download_url: m.targets[0].url,
+                },
+                {
+                  name: 'SHA256SUMS.txt',
+                  state: 'uploaded',
+                  size: 100,
+                  browser_download_url: m.targets[0].checksumUrl,
                 },
               ],
             }

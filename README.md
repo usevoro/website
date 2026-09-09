@@ -12,7 +12,7 @@ This repository contains the **website**, not the desktop application. The first
 
 ## Run locally
 
-Requires **Node.js 22 or 24** and npm.
+Requires **Node.js 22.x** and npm (pinned for local and Vercel builds).
 
 ```sh
 git clone https://github.com/usevoro/website.git

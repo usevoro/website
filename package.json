@@ -12,7 +12,7 @@
     "check": "npm run format:check && npm test && npm run build"
   },
   "engines": {
-    "node": ">=22"
+    "node": "22.x"
   },
   "version": "0.1.0",
   "description": "The VORO product website \u2014 a local 3D asset review workspace for people making games.",

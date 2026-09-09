@@ -8,7 +8,7 @@ The product website for **VORO**, a local 3D asset review workspace for people m
 
 ![VORO’s sprout mascot and painted miniature world](public/images/social.jpg)
 
-This repository contains the **website**, not the desktop application. The first [Mac early-access release](https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1) is published with Developer ID signing and Apple notarization. This site maps its exact Apple silicon and Intel archives and shows the testing limitations. Windows and Linux downloads remain unavailable.
+This repository contains the **website**, not the desktop application. The first [early-access release](https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1) includes Mac Apple silicon/Intel and Windows/Linux x64. Mac builds are Developer ID signed and Apple-notarized; Windows and Linux are unsigned experimental cross-builds. Download cards show the actual signing and native-testing limitations.
 
 ## Run locally
 

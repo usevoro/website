@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-09T08:43:21.217Z",
+  "generatedAt": "2026-09-09T09:02:30.354Z",
   "repository": "usevoro/voro",
   "targets": [
     {
@@ -19,7 +19,7 @@
       "releaseNotesUrl": "https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1",
       "checksumUrl": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/SHA256SUMS.txt",
       "signing": "Developer ID signed and Apple notarized. Packaged-app workflow tests passed.",
-      "verifiedAt": "2026-09-09T08:43:21.217Z"
+      "verifiedAt": "2026-09-09T09:02:30.354Z"
     },
     {
       "id": "mac-x64",
@@ -37,24 +37,48 @@
       "releaseNotesUrl": "https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1",
       "checksumUrl": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/SHA256SUMS.txt",
       "signing": "Developer ID signed and Apple notarized. Experimental cross-build; native Intel testing pending.",
-      "verifiedAt": "2026-09-09T08:43:21.217Z"
+      "verifiedAt": "2026-09-09T09:02:30.354Z"
     },
     {
       "id": "windows-x64",
       "platform": "Windows",
       "architecture": "64-bit (x64)",
-      "status": "planned"
+      "status": "available",
+      "version": "0.1.0-alpha.1",
+      "tag": "v0.1.0-alpha.1",
+      "assetName": "VORO-0.1.0-alpha.1-windows-x64.zip",
+      "channel": "prerelease",
+      "minimumOS": "Windows 10 or newer",
+      "fileType": "ZIP",
+      "sizeBytes": 162915416,
+      "url": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/VORO-0.1.0-alpha.1-windows-x64.zip",
+      "releaseNotesUrl": "https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1",
+      "checksumUrl": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/SHA256SUMS-windows-linux.txt",
+      "signing": "Unsigned experimental cross-build. Native Windows testing pending.",
+      "verifiedAt": "2026-09-09T09:02:30.354Z"
     },
     {
       "id": "linux-x64",
       "platform": "Linux",
       "architecture": "64-bit (x64)",
-      "status": "planned"
+      "status": "available",
+      "version": "0.1.0-alpha.1",
+      "tag": "v0.1.0-alpha.1",
+      "assetName": "VORO-0.1.0-alpha.1-linux-x64.zip",
+      "channel": "prerelease",
+      "minimumOS": "Current x64 desktop Linux; compatible libraries and Chromium sandbox",
+      "fileType": "ZIP",
+      "sizeBytes": 127659447,
+      "url": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/VORO-0.1.0-alpha.1-linux-x64.zip",
+      "releaseNotesUrl": "https://github.com/usevoro/voro/releases/tag/v0.1.0-alpha.1",
+      "checksumUrl": "https://github.com/usevoro/voro/releases/download/v0.1.0-alpha.1/SHA256SUMS-windows-linux.txt",
+      "signing": "Unsigned experimental cross-build. Native Linux desktop testing pending.",
+      "verifiedAt": "2026-09-09T09:02:30.354Z"
     }
   ],
   "stars": {
     "count": 1,
     "repository": "usevoro/voro",
-    "fetchedAt": "2026-09-09T08:43:21.217Z"
+    "fetchedAt": "2026-09-09T09:02:30.354Z"
   }
 }

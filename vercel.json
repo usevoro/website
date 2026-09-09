@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "npm ci --ignore-scripts",
-  "buildCommand": "npm run refresh && npm run check",
+  "buildCommand": "npm run refresh && npm test && npm run build",
   "outputDirectory": "dist",
   "headers": [
     {

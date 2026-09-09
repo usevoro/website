@@ -2,8 +2,8 @@
 
 1. Import `usevoro/website` in Vercel.
 2. Leave **Root Directory** at **`.`**. This standalone repository contains everything required; no desktop repository access is needed.
-3. Choose **Other** as the framework and **Node.js 22.x** (24.x is also tested).
-4. Keep the checked-in `vercel.json` defaults: `npm ci --ignore-scripts`, `npm run refresh && npm run check`, output `dist`.
+3. Choose **Other** as the framework and **Node.js 22.x**, matching the pinned package engine.
+4. Keep the checked-in `vercel.json` defaults: `npm ci --ignore-scripts`, `npm run refresh && npm test && npm run build`, output `dist`.
 5. Set `SITE_ORIGIN=https://usevoro.app` in Production. Keep `SITE_INDEXABLE=false` for prelaunch.
 6. Deploy a preview and review it. For a public launch, connect `usevoro.app` and redirect `www.usevoro.app` to it and set `SITE_INDEXABLE=true` in the **Production** environment.
 
@@ -12,6 +12,12 @@ Vercel preview/development environments remain noindex even if the indexing flag
 Keep Vercel’s system environment variables enabled. The checked-in canonical origin is `https://usevoro.app`; `SITE_ORIGIN` can override it. With neither configured, noindex builds use `VERCEL_PROJECT_PRODUCTION_URL`, then `VERCEL_URL`, and finally `https://localhost`. Indexable production builds require an explicit production origin to prevent accidental canonical URLs on ephemeral deployments.
 
 The build emits HTML, CSS, JavaScript, local images/fonts, a sitemap, robots.txt, and a custom 404 page. It has no request-time server, uploads, or application accounts. Optional Umami Cloud analytics is disabled by default; see [analytics setup](ANALYTICS.md) to enable it later using Production environment variables. Unknown paths must remain 404s; do not add a catch-all rewrite to the home page.
+
+## Deployment validation
+
+Run `npm run check` locally before submitting changes; it includes repository formatting, tests, and the static build. Vercel runs release refresh, tests, and the build directly. Repository formatting is intentionally excluded from the hosted build so a formatting difference in the deployment copy of `vercel.json` cannot block deployment.
+
+If the Vercel dashboard has a Build Command override, clear it to use `vercel.json`, or set it to `npm run refresh && npm test && npm run build`. Redeploy the latest commit rather than retrying an older failed revision.
 
 ## Release freshness
 

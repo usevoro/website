@@ -46,7 +46,7 @@ The only development dependency is the pinned formatter. Building and serving th
 
 Import **`usevoro/website`** into Vercel. Keep **Root Directory at the repository root (`.`)** and choose **Framework Preset: Other**. The checked-in `vercel.json` sets the install, validation/build command, output directory, and response headers. Nitro is not required.
 
-See [deployment instructions](docs/DEPLOYMENT.md) for environment variables, preview protection, and public indexing. The production domain is `usevoro.app`; the repository is ready to deploy, but the site is not live yet. [Umami setup](docs/ANALYTICS.md) documents the account, website ID, and Production variables needed later; tracking remains off until explicitly enabled.
+See [deployment instructions](docs/DEPLOYMENT.md) for environment variables, preview protection, and public indexing. The production domain is `usevoro.app`; the repository is ready to deploy, but the site is not live yet. [Umami setup](docs/ANALYTICS.md) records the existing VORO website entry in the EU region and the exact Production variables; tracking remains off until enabled for deployment.
 
 ## Project map
 

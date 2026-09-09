@@ -1,21 +1,21 @@
 # Umami Cloud analytics
 
-The repository is ready for Umami Cloud, but analytics is **disabled by default**. No Umami account, website ID, production domain, or Vercel deployment is provisioned by this code change. No paid plan or GitHub Actions job is needed for the preparation.
+The repository is ready for Umami Cloud, but analytics is **disabled by default**. The production hostname is **usevoro.app**. Umami account setup and the website UUID are still pending; the site has not been deployed. No paid plan or GitHub Actions job is needed for the preparation.
 
 ## Activate after deploying the website
 
 1. Sign up for or sign in to [Umami Cloud](https://cloud.umami.is). Choose the free Hobby plan; a paid trial is not required for this setup. Confirm current account limits before enabling collection.
-2. In **Websites → Add website**, create **VORO** with the actual production hostname. Keep the dashboard private; do not enable public sharing. If the site already exists, reuse it.
+2. In **Websites → Add website**, create **VORO** with domain **usevoro.app** (no protocol or path). Keep the dashboard private; do not enable public sharing. If the site already exists, reuse it.
 3. Open **Edit → Tracking code** and copy `data-website-id`. It is a public website UUID, not an API key. This integration uses the standard Cloud tracker at `https://cloud.umami.is/script.js`; confirm that the account's tracking snippet matches before activating it.
 4. In the Vercel project's **Production** environment, set:
 
    ```dotenv
-   SITE_ORIGIN=https://your-real-domain.example
+   SITE_ORIGIN=https://usevoro.app
    UMAMI_ENABLED=true
    UMAMI_WEBSITE_ID=your-website-uuid
    ```
 
-   Replace both placeholders with real values. Keep Vercel system environment variables enabled so `VERCEL_ENV=production` is available. No API key, account password, or secret belongs in the repository or browser bundle. `SITE_INDEXABLE` remains a separate SEO setting.
+   Replace `your-website-uuid` with the actual public ID from the VORO website entry. Keep Vercel system environment variables enabled so `VERCEL_ENV=production` is available. No API key, account password, or secret belongs in the repository or browser bundle. `SITE_INDEXABLE` remains a separate SEO setting.
 
 5. Redeploy. The site is static, so changing environment variables alone does not update the existing HTML. The build rejects missing/invalid IDs and missing explicit origins when production tracking is enabled.
 6. Visit the canonical production hostname. Confirm the Cloud script loads and its event requests succeed, then check Umami for the visit. Click the documentation and GitHub links; once actual release downloads exist, test one platform download too. Verify event properties against the table below. These verification visits will appear in the dashboard.

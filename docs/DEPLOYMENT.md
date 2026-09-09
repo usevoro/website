@@ -4,12 +4,12 @@
 2. Leave **Root Directory** at **`.`**. This standalone repository contains everything required; no desktop repository access is needed.
 3. Choose **Other** as the framework and **Node.js 22.x** (24.x is also tested).
 4. Keep the checked-in `vercel.json` defaults: `npm ci --ignore-scripts`, `npm run refresh && npm run check`, output `dist`.
-5. Set `SITE_ORIGIN` to your approved production HTTPS origin, without a path. Keep `SITE_INDEXABLE=false` for prelaunch.
-6. Deploy a preview and review it. For a public launch, connect the approved domain and set `SITE_INDEXABLE=true` in the **Production** environment.
+5. Set `SITE_ORIGIN=https://usevoro.app` in Production. Keep `SITE_INDEXABLE=false` for prelaunch.
+6. Deploy a preview and review it. For a public launch, connect `usevoro.app` and redirect `www.usevoro.app` to it and set `SITE_INDEXABLE=true` in the **Production** environment.
 
 Vercel preview/development environments remain noindex even if the indexing flag is enabled. Noindex is not access control; enable Vercel Deployment Protection when a preview should be restricted. This public source repository does not automatically publish a website or desktop release.
 
-Keep Vercel’s system environment variables enabled. Without `SITE_ORIGIN`, noindex previews use `VERCEL_PROJECT_PRODUCTION_URL`, then `VERCEL_URL`. Local builds fall back to `https://localhost`. Indexable production builds require an explicit production origin to prevent accidental canonical URLs on ephemeral deployments.
+Keep Vercel’s system environment variables enabled. The checked-in canonical origin is `https://usevoro.app`; `SITE_ORIGIN` can override it. With neither configured, noindex builds use `VERCEL_PROJECT_PRODUCTION_URL`, then `VERCEL_URL`, and finally `https://localhost`. Indexable production builds require an explicit production origin to prevent accidental canonical URLs on ephemeral deployments.
 
 The build emits HTML, CSS, JavaScript, local images/fonts, a sitemap, robots.txt, and a custom 404 page. It has no request-time server, uploads, or application accounts. Optional Umami Cloud analytics is disabled by default; see [analytics setup](ANALYTICS.md) to enable it later using Production environment variables. Unknown paths must remain 404s; do not add a catch-all rewrite to the home page.
 
